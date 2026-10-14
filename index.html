@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <section class="card cadastro">
+            <div class="icone" aria-hidden="true">＋</div>
+            <h1>Cadastro de usuário</h1>
+            <p class="subtitulo">
+                Preencha os dados abaixo para adicionar um usuário.
+            </p>
+
+            <form id="formCadastro">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome completo"
+                        required
+                        minlength="2"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="codinome">Codinome</label>
+                    <input
+                        type="text"
+                        id="codinome"
+                        name="codinome"
+                        placeholder="Digite seu codinome"
+                        required
+                        maxlength="50"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="nome@exemplo.com"
+                        required
+                        maxlength="150"
+                    >
+                </div>
+
+                
+                <div class="campo">
+                    <label for="nivel">Nível</label>
+                    <select id="nivel" name="nivel" required>
+                        <option value="">Selecione seu nível</option>
+                        <option value="Iniciante">Iniciante</option>
+                        <option value="Especialista">Especialista</option>
+                        <option value="Líder">Líder</option>
+                    </select>
+                </div>
+
+
+                <div class="campo">
+                    <label for="numero">Telefone</label>
+                    <input
+                        type="tel"
+                        id="numero"
+                        name="numero"
+                        placeholder="(82) 99999-9999"
+                        required
+                        inputmode="tel"
+                        maxlength="20"
+                    >
+                </div>
+
+                <button class="btn-confirmar" type="submit">
+                    Cadastrar usuário
+                </button>
+
+                <p
+                    id="mensagem"
+                    class="mensagem"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </form>
+        </section>
+
+        <section class="card painel-usuarios">
+            <div class="cabecalho-tabela">
+                <div>
+                    <h2>Usuários cadastrados</h2>
+                    <p>Lista de usuários adicionados ao sistema.</p>
+                </div>
+
+                <span class="contador" id="totalUsuarios">
+                    0 usuários
+                </span>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Codinome</th>
+                            <th>E-mail</th>
+                            <th>Nível</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelaUsuarios"></tbody>
+                </table>
+            </div>
+
+            <p id="listaVazia" class="lista-vazia">
+                Nenhum usuário cadastrado ainda.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
